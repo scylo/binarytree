@@ -16,9 +16,9 @@ public class AddButton extends Actor
     public void act()
     {
         if (Greenfoot.mouseClicked(this)) {
-             
-             BTree btree = new BTree();
-             String inputValue = JOptionPane.showInputDialog("Please input a value");
+             String value = JOptionPane.showInputDialog("digite o numero que deseja inserir");             
+             getWorld().addObject(new Node(Integer.parseInt(value)), 320, 20);
+             System.out.println(Integer.parseInt(value));
         }
     }
 }

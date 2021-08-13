@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Node
+comment0.text=\n\ Write\ a\ description\ of\ class\ Node\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=value
+comment1.target=Node(int)
+comment2.params=
+comment2.target=int\ getValue()
+comment3.params=value
+comment3.target=void\ setValue(int)
+comment4.params=value
+comment4.target=void\ setLeftChildValue(Node)
+comment5.params=value
+comment5.target=void\ setRightChildValue(Node)
+comment6.params=
+comment6.target=Node\ getLeftChild()
+comment7.params=
+comment7.target=Node\ getRightChild()
+numComments=8

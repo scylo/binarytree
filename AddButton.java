@@ -26,8 +26,8 @@ public class AddButton extends Actor
  
         if (Greenfoot.mouseClicked(this)) {
              String value = JOptionPane.showInputDialog("digite o numero que deseja inserir");
-             arvore.add(Integer.parseInt(value));
-             // getWorld().addObject(x, 320, 20);
+             Node newNode = arvore.add(Integer.parseInt(value));
+             getWorld().addObject(newNode, newNode.x, newNode.y);
              // getWorld().addObject(arvore.add(Integer.parseInt(value)), 320, 20);
              // getWorld().addObject(newNode, newNode.x, newNode.y);
         }

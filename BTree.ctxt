@@ -6,5 +6,5 @@ comment1.target=BTree()
 comment2.params=
 comment2.target=Node\ getRoot()
 comment3.params=value
-comment3.target=void\ add(int)
+comment3.target=Node\ add(int)
 numComments=4

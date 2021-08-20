@@ -16,6 +16,7 @@ public class MyWorld extends World
      */
     
     private BTree arvore;
+    boolean drawning = false;
     
     public MyWorld()
     {    
@@ -27,6 +28,14 @@ public class MyWorld extends World
     
     public BTree getBTree() {
         return arvore;
+    }
+    
+    public boolean getDrawning() {
+        return this.drawning;
+    }
+    
+    public void setDrawning() {
+        this.drawning = true;
     }
     
     /**
@@ -41,34 +50,13 @@ public class MyWorld extends World
     
     public void act() {
         // System.out.println("arvore vazia");
-        Node actual = arvore.getRoot();
-        if (actual != null) {
-            showTree(actual);
-        }
+        // Node actual = arvore.getRoot();
+        // if (actual != null) {
+            // if (getDrawning() == false) {
+                // showTree(actual);
+            // }
+        // }
     }
     
-    public void showTree(Node actual) {
-        if (actual.getFather() == null) {
-            addObject(actual, actual.x, actual.y);
-            if (actual.hasChildren()) {
-                for (Node node : actual.getChildrens()) {
-                    if (node != null) {
-                        showTree(node);
-                    }
-                }
-            }
-        }
-        if (actual.getRightChild() != null) {
-            if (actual.getFather().getRightChild() == actual) {
-                addObject(actual, actual.x + 20, actual.y + 30);
-                showTree(actual.getRightChild());
-            }
-        }
-        if (actual.getRightChild() != null) {
-            if (actual.getFather().getLeftChild() == actual) {
-                addObject(actual, actual.x - 20, actual.y + 30);
-                showTree(actual.getLeftChild());
-            }
-        }
-    }
+    
 }

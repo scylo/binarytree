@@ -35,6 +35,22 @@ public class Node extends Actor
         setImage(img);
     }
     
+    public int getX() {
+        return this.x;
+    }
+    
+    public int getY() {
+        return this.y;
+    }
+    
+    public void setX(int value) {
+        this.x = value;
+    }
+    
+    public void setY(int value) {
+        this.y = value;
+    }
+    
     public int getValue() {
         return value;
     }
@@ -45,10 +61,14 @@ public class Node extends Actor
     
     public void setLeftChildValue(Node value) {
         this.left_child = value;
+        value.setX(this.getX() - 20);
+        value.setY(this.getY() + 30);
     }
     
     public void setRightChildValue(Node value) {
         this.right_child = value;
+        value.setX(this.getX() + 20);
+        value.setY(this.getY() + 30);
     }
     
     public Node getFather() {
@@ -82,5 +102,6 @@ public class Node extends Actor
     }
     
     public void act() {
+        setLocation(this.getX(), this.getY());
     }
 }

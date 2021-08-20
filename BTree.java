@@ -26,12 +26,13 @@ public class BTree extends Actor
         return root;
     }
 
-    public void add(int value) {
+    public Node add(int value) {
         Node newNode = new Node(value);
         if (root == null) {
             System.out.println("arvore vazia");
             this.root = newNode;
             System.out.println(this.root.getValue());
+            return newNode;
         } else {
             Node actual = this.root;
             System.out.println("buscando onde colocar");
@@ -43,7 +44,7 @@ public class BTree extends Actor
                         actual.setRightChildValue(newNode);
                         newNode.setFather(actual);
                         System.out.println(newNode.getValue());
-                        break;
+                        return newNode;
                     } else {
                         System.out.println("no nao vazio, procurando no proximo");
                         actual = actual.getRightChild();
@@ -57,7 +58,7 @@ public class BTree extends Actor
                         actual.setLeftChildValue(newNode);
                         newNode.setFather(actual);
                         System.out.println(newNode.getValue());
-                        break;
+                        return newNode;
                     } else {
                         System.out.println("no nao vazio, procurando no proximo");
                         actual = actual.getLeftChild();
@@ -66,7 +67,7 @@ public class BTree extends Actor
                 
                 if (newNode.getValue() == actual.getValue()) {
                     System.out.println("valor ja existe");
-                    break;
+                    return actual;
                 }
             }
         }
